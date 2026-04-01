@@ -20,6 +20,7 @@ data = pd.read_csv(path).to_numpy()
 X = data[:, 0:-1]   # features
 y = data[:, -1]     # label
 
+
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.15, stratify=y, random_state=1
 )
