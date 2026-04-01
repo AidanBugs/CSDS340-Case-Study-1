@@ -42,6 +42,5 @@ format:
 
 # The reason about your final choice of classification model and its related data preprocessing and hyperparameter tuning algorithms
 
-# Insightfulness and clarity of your observations and discussions. (Please be free
-to add the approaches you tried but failed before arriving at the best solution.)
+# Insightfulness and clarity of your observations and discussions. (Please be free to add the approaches you tried but failed before arriving at the best solution.)
 
