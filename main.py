@@ -28,8 +28,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 # 2. Define cross-validation strategy (for hyperparameter tuning)
 # -------------------------
 cv_strategy = StratifiedKFold(n_splits=10, shuffle=True, random_state=1)
-# Optionally, use repeated stratified k-fold for more stable estimates:
-# cv_strategy = RepeatedStratifiedKFold(n_splits=5, n_repeats=3, random_state=1)
 
 # -------------------------
 # 3. Hyperparameter distributions for each classifier
@@ -116,17 +114,17 @@ pipelines = build_pipelines()
 # 5. Run RandomizedSearchCV for each pipeline on TRAINING set
 # -------------------------
 best_models = {}
-cv_results = {}   # rename to avoid confusion with test results
+cv_results = {}
 
 for name, (pipe, param_grid) in pipelines.items():
     print(f"\n=== Tuning {name} ===")
     search = RandomizedSearchCV(
         pipe,
         param_distributions=param_grid,
-        n_iter=200,                # number of random combinations (adjust as needed)
+        n_iter=200, 
         cv=cv_strategy,
         scoring={'accuracy': 'accuracy', 'f1': 'f1'},
-        refit='accuracy',         # refit best model based on accuracy
+        refit='accuracy',
         verbose=1,
         random_state=1,
         n_jobs=-1
