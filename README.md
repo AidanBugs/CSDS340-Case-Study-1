@@ -85,15 +85,15 @@ Scoring with respect to accuracy was performed on a stratified k-fold of k=10, r
 
 SVM:
 
-- C=2.0343428262332774
-- 𝛾=0.6494608808799401
+- $C=2.0343428262332774$
+- $\gamma=0.6494608808799401$
 
 ## Why our Tuning Process Works
 
 As mentioned before, random search is a good heuristic for finding optimal hyper parameters because it doesn’t stick to a strict grid or require an exhaustive search. The stratified k-fold cross validation ensures similar distribution of class 0 and class 1 which increases the robustness of the fold models. Scaling is present in all 3 preprocessing types, which is important for the different parameters and models to ensure further robustness. Additionally since scoring was with respect to accuracy in the final test done by TA’s, this was the method used to refit models after each search. 
 
 # The reason about your final choice of classification model and its related data preprocessing and hyperparameter tuning algorithms
-We choose the SVM with parameters, C=2.0343428262332774, 𝛾=0.6494608808799401 and preprocessing of just a standard scalar. We chose this model because it had the highest accuracy in our separate validation set which was withheld during the k-fold process. These parameters ended up having the highest accuracy for the separate validation set out of all of the models.
+We choose the SVM with parameters, $C=2.0343428262332774$, $\gamma=0.6494608808799401$ and preprocessing of just a standard scalar. We chose this model because it had the highest accuracy in our separate validation set which was withheld during the k-fold process. These parameters ended up having the highest accuracy for the separate validation set out of all of the models.
 
 # Insightfulness and clarity of your observations and discussions. (Please be free to add the approaches you tried but failed before arriving at the best solution.)
 Other attempts on models include trying different preprocessing techniques with dimensionality reduction, specifically using LDA and PCA. Of the two PCA performed very similarly to no dimensionality reduction but we found that LDA had a significant decrease in accuracy. We also tried different k values for k-folds and different random states to end up with different hyper parameters which were tested further. Additionally, we varied the random search iterations from an initial 20 to our final 200 amount resulting in a large amount of hyper parameter tuples tested on.
