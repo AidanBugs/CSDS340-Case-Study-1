@@ -46,7 +46,7 @@ param_distributions = {
         'clf__kernel': ['rbf']
     },
     'DecisionTree': {
-        'clf__max_depth': randint(3, 20),
+        'clf__max_depth': randint(3, 50),
         'clf__min_samples_split': randint(2, 20),
         'clf__min_samples_leaf': randint(1, 10),
         'clf__criterion': ['gini', 'entropy']
